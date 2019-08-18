@@ -37,13 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'account.apps.AccountConfig',
 ]
+#中间件
+#表示为一个类，其中包含了一些方法，可在请求或者响应阶段以全局方式被执行
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #处理请求间的当前会话
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    #使用会话将用户与请求关联起来
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
