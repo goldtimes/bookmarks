@@ -19,6 +19,21 @@ LOGIN_URL = 'login'
 #用户重定向并实现注销的URL
 LOGOUT_URL='logout'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST='smtp.qq.com'
+EMAIL_PORT=25
+EMAIL_HOST_USER='1019825699@qq.com'
+EMAIL_HOST_PASSWORD = 'hiyudexyhwvfbeff'
+#False (是否使用TLS安全传输协议(用于在两个通信应用程序之间提供保密性和数据完整性。)
+EMAIL_USER_TLS = True
+#qq邮箱要求使用的配置
+EMAIL_USER_SSL = False
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
+EMAIL_TIMEOUT = None
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
