@@ -38,13 +38,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #这里是和顺序是有关系的
+    #把app放到了最前面，Django用户在默认情况下使用模板而不是admin模块中的验证模板
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account.apps.AccountConfig',
 ]
 #中间件
 #表示为一个类，其中包含了一些方法，可在请求或者响应阶段以全局方式被执行
