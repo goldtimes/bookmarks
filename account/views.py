@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate,login
 from .forms import LoginForm
 # Create your views here.
+from django.contrib.auth.decorators import login_required
 
 def user_login(request):
     """
@@ -31,3 +32,6 @@ def user_login(request):
     else:
         form = LoginForm()  # 当user_login通过GET方式时调用这里 实例化新的登录表单，并将其显示模板中
     return render(request, 'account/login.html', {'form': form})
+@login_required
+def dashboard(request):
+    return render(request,'account/dashboard.html',{'section':'dashboard'})

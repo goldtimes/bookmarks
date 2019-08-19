@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+#成功登陆后，将通知Djano重定向的URL
+LOGIN_REDIRECT_URL='dashboard'
+#用户重定向并实现登陆的URL
+LOGIN_URL = 'login'
+#用户重定向并实现注销的URL
+LOGOUT_URL='logout'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
