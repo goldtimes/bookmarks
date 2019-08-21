@@ -34,6 +34,10 @@ EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = None
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+#通过开发服务器提供用户上传的媒体文件
+MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(os.getcwd(),'media/')
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

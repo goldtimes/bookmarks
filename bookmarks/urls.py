@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/',include('account.urls')),
 ]
+#DEBUG == True ,也就是在开发阶段，为媒体文件提供服务
+#注意 static()使用与开发阶段，不要再产品阶段为Django提供静态文件
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
