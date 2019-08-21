@@ -9,7 +9,8 @@
             Please try again.
         </p>
     {% else %}
-        <p> Please,use the following form to login-in:</p>
+        <p> Please,use the following form to login-in.If you don't have an account<a href="{% url "register" %}">Register here</a></p>
+
     {% endif %}
     <div class="login-form">
         <form action="{% url 'login' %}"  method="post">
