@@ -5,6 +5,8 @@ from .forms import LoginForm,UserRegistrationForm,UserEditForm,ProfileEditForm
 # Create your views here.
 from django.contrib.auth.decorators import login_required
 from .models import Profile
+from django.contrib import messages
+
 
 def user_login(request):
     """
@@ -64,9 +66,11 @@ def edit(request):
             print("user_form and  profile_form are valid")
             user_form.save()
             profile_form.save()
+            messages.success(request,'Profile updated successfully')
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
+        messages.error(request,"Error updating your profile")
     return render(request,'account/edit.html',{'user_form':user_form,'profile_form':profile_form})
 
 

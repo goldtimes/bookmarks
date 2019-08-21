@@ -34,13 +34,13 @@ EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = None
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-#通过开发服务器提供用户上传的媒体文件
-MEDIA_URL='/media/'
-MEDIA_ROOT = os.path.join(os.getcwd(),'media/')
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#通过开发服务器提供用户上传的媒体文件
+MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -51,7 +51,13 @@ SECRET_KEY = 'k(hlv$hpdns^0ft#%9941n$2bevodwz0y$nz$9^87kahhw+i$z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
+#针对项目的后端验证列表
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
 
 
 # Application definition
@@ -95,6 +101,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                #上下文处理器 所以在模板中可以使用messages变量
                 'django.contrib.messages.context_processors.messages',
             ],
         },
