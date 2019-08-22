@@ -52,7 +52,7 @@ SECRET_KEY = 'k(hlv$hpdns^0ft#%9941n$2bevodwz0y$nz$9^87kahhw+i$z'
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com','localhost','127.0.0.1']
 #针对项目的后端验证列表
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'images.apps.ImagesConfig'
 ]
 #中间件
 #表示为一个类，其中包含了一些方法，可在请求或者响应阶段以全局方式被执行
