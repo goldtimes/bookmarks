@@ -24,6 +24,7 @@ urlpatterns = [
     #社交网站登录URL路径添加至项目中
     path('social-auth/',include('social_django.urls',namespace='social')),
     path('images/',include('images.urls',namespace='images')),
+
 ]
 #DEBUG == True ,也就是在开发阶段，为媒体文件提供服务
 #注意 static()使用与开发阶段，不要再产品阶段为Django提供静态文件

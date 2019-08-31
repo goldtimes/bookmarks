@@ -21,9 +21,9 @@ LOGOUT_URL='logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST='smtp.qq.com'
-EMAIL_PORT=25
-EMAIL_HOST_USER='1019825699@qq.com'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '1019825699@qq.com'
 EMAIL_HOST_PASSWORD = 'hiyudexyhwvfbeff'
 #False (是否使用TLS安全传输协议(用于在两个通信应用程序之间提供保密性和数据完整性。)
 EMAIL_USER_TLS = True
@@ -39,8 +39,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #通过开发服务器提供用户上传的媒体文件
-MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_URL = '/media/'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -52,7 +53,7 @@ SECRET_KEY = 'k(hlv$hpdns^0ft#%9941n$2bevodwz0y$nz$9^87kahhw+i$z'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['mysite.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['mysite.com','localhost','127.0.0.1',]
 #针对项目的后端验证列表
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -161,3 +162,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR,'templates/javascript')
+
