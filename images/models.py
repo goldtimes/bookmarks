@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from django.conf import settings
 from django.utils.text import slugify
 # Create your models here.
@@ -29,3 +30,8 @@ class Image(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Image, self).save(*args, **kwargs)
+
+    #为对象提供规范URL的常见模式是在模型中定义get_absolute_url()方法
+    def get_absolute_url(self):
+        return reverse('images:detail',args=[self.id,self.slug])
+
